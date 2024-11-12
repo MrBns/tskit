@@ -5,12 +5,16 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "tsc"
+    "build": "tsup",
+    "postinstall": "pnpm build"
   },
   "keywords": [],
+  "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2"
+  },
   "devDependencies": {
-    "@paralleldrive/cuid2": "^2.2.2",
-    "esbuild": "^0.23.1"
+    "esbuild": "^0.23.1",
+    "tsup": "^8.3.5"
   },
   "author": "",
   "license": "ISC",
