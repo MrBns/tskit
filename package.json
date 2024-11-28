@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "tsup",
-    "postinstall": "pnpm build"
+    "postinstall": "tsup --silent",
+    "tsup": "tsup"
   },
   "keywords": [],
   "dependencies": {
