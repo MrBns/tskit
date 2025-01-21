@@ -1,12 +1,12 @@
 export type ToastConfig = {
-	containerTemplate: typeof String.raw;
-	position: 'top' | 'bottom' | 'left' | 'right';
-	showIcon?: boolean;
+  containerTemplate: typeof String.raw;
+  position: 'top' | 'bottom' | 'left' | 'right';
+  showIcon?: boolean;
 };
 class Toast {
-	constructor(private config: ToastConfig) {}
+  constructor(private config: ToastConfig) {}
 
-	async success() {}
+  async success() {}
 }
 
 export { Toast };
