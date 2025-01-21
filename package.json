@@ -1,23 +1,38 @@
 {
   "name": "@bns/tskit",
   "version": "1.0.0",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "type": "module",
-  "scripts": {
-    "build": "tsup",
-    "postinstall": "tsup --silent",
-    "tsup": "tsup"
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   },
-  "keywords": [],
-  "dependencies": {
-    "@paralleldrive/cuid2": "^2.2.2"
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "rslib build",
+    "check": "biome check --write",
+    "dev": "rslib build --watch",
+    "format": "biome format --write",
+    "test": "vitest run"
   },
   "devDependencies": {
-    "esbuild": "^0.23.1",
-    "tsup": "^8.3.5"
+    "@biomejs/biome": "^1.9.4",
+    "@rslib/core": "^0.3.2",
+    "@types/node": "^22.8.1",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.1"
   },
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "private": true,
+  "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2"
+  }
 }
