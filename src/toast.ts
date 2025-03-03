@@ -1,6 +1,6 @@
 export type ToastConfig = {
   containerTemplate: typeof String.raw;
-  position: 'top' | 'bottom' | 'left' | 'right';
+  position: "top" | "bottom" | "left" | "right";
   showIcon?: boolean;
 };
 class Toast {

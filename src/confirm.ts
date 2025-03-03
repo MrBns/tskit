@@ -1,4 +1,4 @@
-import { default as cuid } from './id';
+import { default as cuid } from "./id";
 
 type ConfirmParams = {
   html?: string;
@@ -10,7 +10,7 @@ export default async function Confirm(params: ConfirmParams) {
     {
       console.log(globalThis);
       const id = `modal-${isSecureContext ? window.crypto.randomUUID() : cuid(30)}`;
-      const template = ({ title = 'Confirmation' }) =>
+      const template = ({ title = "Confirmation" }) =>
         html` <!--Modal Backdrop -->
           <div id="${id}-backdrop" class="fixed w-full h-full bg-black/30 z-[49] backdrop-blur left-0 bottom-0"></div>
           <!--Modal Elements -->
@@ -38,11 +38,11 @@ export default async function Confirm(params: ConfirmParams) {
             </div>
           </div>`;
 
-      const modalContainer = document.getElementById('modal-container') as HTMLDivElement;
+      const modalContainer = document.getElementById("modal-container") as HTMLDivElement;
 
       /* Modal Wrapper */
-      const modalWrapper = document.createElement('div');
-      modalWrapper.className = 'contents';
+      const modalWrapper = document.createElement("div");
+      modalWrapper.className = "contents";
       modalWrapper.innerHTML = template({ title: params.title });
 
       /* Buttons */
@@ -51,11 +51,11 @@ export default async function Confirm(params: ConfirmParams) {
       const bodyEl = modalWrapper.querySelector(`#${id}-body`) as HTMLDivElement;
       console.log({ cancelBtn, okBtn, bodyEl });
 
-      cancelBtn.addEventListener('click', () => {
+      cancelBtn.addEventListener("click", () => {
         setTimeout(remove, 100);
         return res(false);
       });
-      okBtn.addEventListener('click', () => {
+      okBtn.addEventListener("click", () => {
         console.log({ okBtn });
         setTimeout(remove, 100);
         return res(true);
@@ -66,8 +66,8 @@ export default async function Confirm(params: ConfirmParams) {
       };
 
       // Showing Modal;
-      bodyEl.innerHTML = params.html || '';
-      modalContainer.insertAdjacentElement('beforeend', modalWrapper);
+      bodyEl.innerHTML = params.html || "";
+      modalContainer.insertAdjacentElement("beforeend", modalWrapper);
     }
   });
 }

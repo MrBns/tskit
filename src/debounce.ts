@@ -1,4 +1,7 @@
-export default function debounce<P extends unknown[] = [], R = unknown>(func: (...arg: P) => R, delay = 250) {
+export default function debounce<P extends unknown[] = [], R = unknown>(
+  func: (...arg: P) => R,
+  delay = 250,
+) {
   let timeOut: ReturnType<typeof setTimeout> | undefined;
 
   return (...arg: P) => {
@@ -7,7 +10,9 @@ export default function debounce<P extends unknown[] = [], R = unknown>(func: (.
   };
 }
 
-export function debounceWithAbort<P extends unknown[] = [], R = unknown>(func: (signal: AbortController, ...arg: P) => R) {
+export function debounceWithAbort<P extends unknown[] = [], R = unknown>(
+  func: (signal: AbortController, ...arg: P) => R,
+) {
   let timeOut: ReturnType<typeof setTimeout> | undefined;
   let controller: AbortController | null = null;
 
