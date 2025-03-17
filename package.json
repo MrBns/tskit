@@ -11,18 +11,19 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "scripts": {
-    "build": "rslib build",
+    "package": "rslib build",
     "check": "biome check --write",
     "dev": "rslib build --watch",
     "format": "biome format --write",
     "test": "vitest run",
-    "rslib": "rslib",
-    "postinstall": "rslib build"
+    "rslib": "rslib"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
